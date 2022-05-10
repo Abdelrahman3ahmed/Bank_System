@@ -7,7 +7,7 @@ int main()
 {
     int window;
     int admin_options;
-    Client client1;
+        Client client1;
     int count_ID = 0;
     int lower_case_count = 0;
     int upper_case_count = 0;
@@ -29,7 +29,6 @@ mainmenu:
         if (admin_options == 1)
         {
             printf("Enter full name\n  ");
-            // fgets(client1.name, 100, stdin) ;
             scanf(" %[^\t\n]s", &client1.name);
             char *split = strtok(client1.name, " ");
             while (split != NULL)
@@ -50,7 +49,11 @@ mainmenu:
                 scanf("%lli", &client1.ID);
                 // printf("%lli",client1.ID);
                 count_ID = (client1.ID == 0) ? 1 : log10(client1.ID) + 1;
+<<<<<<< HEAD
+                printf("%d",count_ID);
+=======
                 // printf("%d",count_ID);
+>>>>>>> 6f529d6fcdce7b02ff0001b859a1e59c6b5c7fbd
                  if (count_ID != 14)
 
                  {
@@ -69,6 +72,10 @@ mainmenu:
                     printf("enter your gaurdian ID\n ");
                     scanf("%lli", &client1.gardiuan_national_ID);
                     count_ID = (client1.gardiuan_national_ID == 0) ? 1 : log10(client1.gardiuan_national_ID) + 1;
+<<<<<<< HEAD
+                   // printf("%d", count_ID);
+=======
+>>>>>>> 6f529d6fcdce7b02ff0001b859a1e59c6b5c7fbd
                     if (count_ID != 14)
                     {
                         printf("invalid National ID\n\n\n\n");
@@ -104,24 +111,31 @@ mainmenu:
 
                 printf("Enter status:\n1.Active \n2.Restricted  \n3.Closed  \n   ");
                 scanf("%d", &client1.acc_status);
+                
+                            printf("Enter password\n  ");
+                            int i=0;
 
-                printf("Enter password\n  ");
-                scanf("%s", &client1.password);
-                p = strlen(client1.password);
-                for (i = 0; i < p; i++)
-                {
-                    if (client1.password[i] >= 'a' && client1.password[i] <= 'z')
+                do{
+                    client1.password[i]=getch();
+                    if(client1.password[i]!='\r'){
+                        printf("*");
+                     if (client1.password[i] >= 'a' && client1.password[i] <= 'z')
                         ++lower_case_count;
                     if (client1.password[i] >= 'A' && client1.password[i] <= 'Z')
                         ++upper_case_count;
                     if (client1.password[i] >= '0' && client1.password[i] <= '9')
-                        ++digit_count;
-                }
+                       ++digit_count;
+                    }
+                    i++;
+                }while(client1.password[i-1]!='\r');
+                client1.password[i-1]='\0';
+                getch();
+                 p = strlen(client1.password);
                 if (lower_case_count > 0 && upper_case_count > 0 && digit_count > 0 && p >= 8)
                 {
                     // printf("Strong\n");
                     List_Insertinto(List_GetSize(&LS), &LS, client1);
-                    printf("Account created successfully\n\n\n\n");
+                    printf("\nAccount created successfully\n\n\n\n");
                     goto aa;
                 }
                 else
@@ -435,6 +449,7 @@ mainmenu:
                     p = strlen(password);
                     for (i = 0; i < p; i++)
                     {
+                     
                         if (password[i] >= 'a' && password[i] <= 'z')
                             ++lower_case_count;
                         if (password[i] >= 'A' && password[i] <= 'Z')

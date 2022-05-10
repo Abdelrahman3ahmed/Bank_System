@@ -49,11 +49,7 @@ mainmenu:
                 scanf("%lli", &client1.ID);
                 // printf("%lli",client1.ID);
                 count_ID = (client1.ID == 0) ? 1 : log10(client1.ID) + 1;
-<<<<<<< HEAD
                 printf("%d",count_ID);
-=======
-                // printf("%d",count_ID);
->>>>>>> 6f529d6fcdce7b02ff0001b859a1e59c6b5c7fbd
                  if (count_ID != 14)
 
                  {
@@ -72,10 +68,7 @@ mainmenu:
                     printf("enter your gaurdian ID\n ");
                     scanf("%lli", &client1.gardiuan_national_ID);
                     count_ID = (client1.gardiuan_national_ID == 0) ? 1 : log10(client1.gardiuan_national_ID) + 1;
-<<<<<<< HEAD
                    // printf("%d", count_ID);
-=======
->>>>>>> 6f529d6fcdce7b02ff0001b859a1e59c6b5c7fbd
                     if (count_ID != 14)
                     {
                         printf("invalid National ID\n\n\n\n");
@@ -105,7 +98,7 @@ mainmenu:
                         goto aa;
                     }
                 }
-
+//hondaa
                 printf("Enter balance\n  ");
                 scanf("%f", &client1.balance);
 

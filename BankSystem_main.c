@@ -51,12 +51,12 @@ mainmenu:
                 // printf("%lli",client1.ID);
                 count_ID = (client1.ID == 0) ? 1 : log10(client1.ID) + 1;
                 // printf("%d",count_ID);
-                /* if (count_ID != 14)
+                 if (count_ID != 14)
 
                  {
                      printf("invalid National ID\n\n\n\n");
                      goto aa;
-                 }*/
+                 }
 
                 printf("Enter Age\n  ");
                 scanf("%d", &client1.Age);
@@ -69,7 +69,6 @@ mainmenu:
                     printf("enter your gaurdian ID\n ");
                     scanf("%lli", &client1.gardiuan_national_ID);
                     count_ID = (client1.gardiuan_national_ID == 0) ? 1 : log10(client1.gardiuan_national_ID) + 1;
-                    printf("%d", count_ID);
                     if (count_ID != 14)
                     {
                         printf("invalid National ID\n\n\n\n");
